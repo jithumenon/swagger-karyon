@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+configurations.all {
+    resolutionStrategy {
+        // Need this to override guice-servlet:3.0 pulled in via jersey-guice
+        force "com.google.inject.extensions:guice-servlet:4.0"
+    }
+}
+
+dependencies {
+    compile "com.sun.jersey.contribs:jersey-guice:1.19"
+    compile "com.netflix.karyon:karyon3-core:3.0.1-rc.20"
+    compile "com.netflix.karyon:karyon3-servlet:3.0.1-rc.20"
+    compile "com.google.inject.extensions:guice-servlet:4.0"
+    compile "javax.servlet:javax.servlet-api:3.0.1"
+    compile "io.swagger:swagger-jersey-jaxrs:1.5.5"
+    testCompile "org.testng:testng:6.9.10"
+}
