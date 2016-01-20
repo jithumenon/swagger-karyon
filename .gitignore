@@ -4,3 +4,4 @@ build
 /.idea
 *.iml
 node_modules/
+classes/

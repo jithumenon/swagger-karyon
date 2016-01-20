@@ -68,3 +68,7 @@ tomcat {
 task installSwaggerUiViewer(type: Exec) {
     commandLine 'sh', './makeSwaggerUiViewer.sh'
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}
