@@ -20,7 +20,7 @@ import java.util.Set;
 /**
  * Created by rbolles on 2/17/16.
  *
- * A hack to allow Swagger, Jersey, and Guice/Karyon to play nice together.
+ * A hack to allow Swagger, Jersey, and Guice/Karyon to play nice together. (https://github.com/swagger-api/swagger-core/issues/1619)
  *
  * It is common practice at Netflix to expose your JAX-RS Resources via filter and GuiceContainer.
  *
