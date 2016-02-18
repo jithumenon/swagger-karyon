@@ -32,7 +32,13 @@ sourceCompatibility = 1.8
 version = '1.0'
 
 repositories {
+    mavenLocal()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+
     mavenCentral()
+
 }
 
 configurations.all {
@@ -48,9 +54,8 @@ dependencies {
     compile "com.netflix.karyon:karyon3-servlet:3.0.1-rc.20"
     compile "com.google.inject.extensions:guice-servlet:4.0"
     compile "org.slf4j:slf4j-log4j12:1.7.13"
-    compile "io.swagger:swagger-jersey-jaxrs:1.5.5"
-
-    providedCompile "javax.servlet:javax.servlet-api:3.0.1"
+    compile "io.swagger:swagger-jersey-jaxrs:1.5.7"
+    providedCompile "javax.servlet:servlet-api:2.5"
 
     testCompile "org.testng:testng:6.9.10"
 

@@ -37,10 +37,7 @@ public class AppModule extends ServletModule {
 
         bind(GuiceContainer.class).asEagerSingleton();
         filter("/*").through(ApiOriginCorsFilter.class);
-        // Filtering through GuiceContainer triggers previously raised issue #1068
-        //filter("/*").through(GuiceContainer.class, createServletParams());
-        // Till we fix #1068, using a Servlet is the only option to make Swagger play nicely
-        serve("/*").with(GuiceContainer.class, createServletParams());
+        filter("/*").through(GuiceContainer.class, createServletParams());
 
     }
 
